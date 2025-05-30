@@ -1,0 +1,1177 @@
+<html>
+<head>
+    <title>Welcome to E-Gram Panchayat</title>
+    <!-- <link rel="stylesheet" href="2style.css"> -->
+<style>
+   *{  margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    user-select: none;body{
+    overflow-x: hidden;
+}
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image:linear-gradient(rgba(0,0,0,0.0)10%,rgba(0,0,0,0.5)40%,rgba(0,0,0,0.2)100%),url(1gram.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbar{
+    width: 100%;
+    height: 30px;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    align-items: center; 
+    background-color: rgba(31, 41, 40, 0.644);
+    border-bottom: 3px solid rgb(224, 249, 0);
+    backdrop-filter: blur(50px);  
+    font-size: 19px;
+}
+ .logo{
+    height: 90px;
+    cursor: pointer;
+    padding:0px 10px 50px 20px ;
+    margin-top: 50px; 
+ }
+/* navbar */
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative; 
+} 
+.navbar ul li a{
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    text-transform: uppercase;
+}
+/* .navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 10px;
+    bottom: -10;
+    transition: 0.5s;
+} */
+.navbar ul li:hover::after{
+    width: 80%;
+}
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 90%;
+    left:-13px;
+    background: #ffc400;
+    display: none;
+    min-width: 150px;
+   z-index: 10;
+}
+
+.dropdown{
+    padding: 32px 0;
+    /* background-color: red; */
+}
+.dropdown:hover .dropdown-menu{
+    display: flex;
+}
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    display: block;
+    /* color: white; */
+    color: rgb(0, 0, 0) !important;
+}
+
+.dropdown-menu a:hover {
+    background: #666;
+}
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.content{
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-50%);
+    text-align: center; 
+    color: #ffffff;
+    font-size: 20px;
+    z-index: 1; 
+}
+.content h1{
+    font-size:40px ;
+    color: #ffffff;
+    /* margin-right: 40%; */
+}
+.content span{
+    color: #ff7200;
+    font-size: 45px; 
+} 
+
+/* since */
+#since{
+    color: rgba(221, 255, 3, 0.923);
+    font-size: 30px;
+}
+/* current affairs and notice */
+.rotator h1{
+    margin-top: 3%;  
+}
+.rotator {
+    width: 98%;
+    height: 90%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    margin-top: 15px;
+    border:3px solid black ;
+}
+.rotator img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+.rotator img.active {
+    opacity: 1;
+}
+/* projects and developments */
+.development-tracker {
+            max-width: 98%;
+            margin: 3%;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding-top: 5%;
+            border: 2px solid rgb(255, 0, 204);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Filter Buttons */
+        .filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        /* Project List */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        /* Individual Project Styling */
+        .project {
+            padding: 15px;
+            border-radius: 5px;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            background-color: #f8f9fa;
+            border-left: 5px solid gray;
+        }
+
+        .project.ongoing {
+            background-color: #ffeeba;
+            border-left: 5px solid #ff9800;
+        }
+
+        .project.completed {
+            background-color: #d4e765;
+            border-left: 5px solid #28a745;
+        }
+
+        .project.upcoming {
+            background-color: #d4edda;
+            border-left: 5px solid #d90094;
+        }
+
+        .project:hover {
+            transform: scale(1.02);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            background-color: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .progress {
+            background-color: #28a745;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+.footer {
+    background: #222;
+    color: #fff;
+    padding: 40px 10%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.footer-section p, 
+        .footer-section a {
+            font-size: 14px;
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff9800;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            background: #444;
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            transition: 0.3s ease;
+        }
+        .social-icons a:hover {
+            background: #ff9800;
+        }
+
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Google Map */
+        .map-container {
+            width: 100%;
+            max-width: 350px;
+            height: 200px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Copyright Section */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        text-align: center;
+    }
+}
+/*  details table */
+.content3{    
+    height: 90vh; 
+}
+table {
+    width: 30%;
+    border-collapse: collapse;
+    margin-top: 60px;
+    background-color: rgb(246, 245, 243);
+    margin-left: 60px;
+    font-size: 20px;
+    box-shadow: 0px 0px 20px#000000;
+}
+
+th, td {
+    border: 3px solid #362d2d;
+    padding: 8px;
+}
+
+th {
+    background-color: #090d12;
+    color: rgb(255, 255, 255);
+}
+
+tr:nth-child(even) {
+    background-color: #ecebe6;
+}
+
+tr:hover {
+    background-color:#ddd;
+}
+/* village at a glance */
+.card {
+    background-color: #ffa4a4;
+    padding: 30px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 470px;
+    text-align: center; 
+    margin: 50px ;
+    box-shadow: 10px 10px 30px#000000;
+}
+
+h1 {
+    margin-bottom: 40px;
+    font-size: 7.5em;
+    color: #000;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 2.5em;
+}
+/* help desk */
+.container {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-right: 80px;
+    margin-top: -40%;
+}
+
+h1 {
+    font-size: 24px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container li {
+    font-size: 18px;
+    color: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+span {
+    font-weight: bold;
+    color: #000;
+}
+/* slider news and current affairs */
+.slider {
+    position: relative;
+    width: 100%;
+    /* max-width: 500px; */
+    height: 100%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.slides {
+    position: relative;
+    width: 90%;
+    height: 90%;    
+}
+.slides img {
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    margin: 50px;
+    /* object-fit: cover; */
+    opacity: 0;
+    animation: fade 12s infinite;
+}
+
+.slides img:nth-child(1) { animation-delay: 0s; }
+.slides img:nth-child(2) { animation-delay: 4s; }
+.slides img:nth-child(3) { animation-delay: 8s; }
+
+@keyframes fade {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    30% { opacity: 1; }
+    40% { opacity: 0; }
+    100% { opacity: 0; }
+}
+/* village gallary */
+.about{
+    padding: 0;
+    margin: 0;
+}
+/* Gallery Grid Layout */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Image Zoom Effect */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+/* Overlay Effect */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+/* Video Section */
+.video-section {
+    padding: 50px 20px;
+    box-shadow: 0px 0px 20px rgb(0, 0, 0);
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+.video-section h2{
+    text-align: center;
+    padding-bottom: 30px;
+    margin: 50px;
+    border-bottom: 3px solid rgb(255, 179, 0);
+}
+
+.video-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-container video {
+    width: 100%;
+    max-width:500px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 2s ease-in-out;
+}
+.video-container h1{
+    width: 180%;
+    max-width:5500px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 2s ease-in-out;
+    border: 3px solid black;
+} 
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    .gallery-item {
+        width: 90%;
+        height:auto;
+}
+/* profile container */
+
+.profile-container{
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+}
+.profile-card {
+    background: white;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    transition: 0.3s;
+    /* margin-left: 70%; */
+    margin: 8% 0;
+    box-shadow: 0px 0px 20px black;
+
+}
+.profile-card h1{
+    font-style:normal;
+    color: #ff7200;
+    border-bottom: 2px solid;
+    margin:20px 0 60px 0;
+
+}
+.profile-card:hover {
+    transform: scale(1.05);
+}
+
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-bottom: 30px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+.position {
+    font-size: 16px;
+    color: #777;
+    margin: 5px 0;
+}
+.contact {
+    margin-top: 10px;
+}
+
+.contact a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 14px;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+.notice-board {
+    width: 500px;
+    height: 70px;
+    overflow: hidden;
+    border: 2px solid #007bff;
+    border-radius: 51px;
+    background: white;
+    position: relative;
+    margin-left: 33%;
+}
+.notices {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    animation: slideUp 10s infinite linear;
+
+}
+.notice {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #dc7005;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Animation */
+@keyframes slideUp {
+    0%, 25% { transform: translateY(0); }
+    25%, 50% { transform: translateY(-50px); }
+    50%, 75% { transform: translateY(-100px); }
+    75%, 100% { transform: translateY(-150px); }
+}
+/* Header styles */
+.header.h1 {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: top 50%;;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+/* News Section Styles */
+.news-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.news-card {
+    background-color: rgb(50, 193, 208);
+    width: 30%;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    border: 3px solid black;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+}
+
+.news-card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.news-description {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.read-more {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+</style>
+</head>
+    <div class="banner">
+        <div class="navbar">
+            <img src="State_logo (1).png" class="logo"> 
+            <ul>
+                <li><a href="2index.html">Home</a></li>
+                <li><a href="3index.html">About Us</a></li>
+                <li><a href="https://bhulekh.mahabhumi.gov.in/">7/12</a></li>
+            <li class="dropdown">
+                    <a href="#">Taxes&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="hometax.php">HomeTax</a></li>
+                        <li><a href="watertax.php">WaterTax</a></li>
+                    </ul> 
+                <li><a href="4index.html">Events</a></li>
+                <li><a href="7index.html">Complaint</a></li>
+                <li class="dropdown">
+                    <a href="6index.html">Schemes&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://pmkisan.gov.in/">PM Kisan</a></li>
+                        <li><a href="https://omms.nic.in/">Gram-Sadak</a></li>
+                        <li><a href="https://swachhbharatmission.ddws.gov.in/">Swatch Bharat</a></li>
+                    </ul>
+            <li class="dropdown">
+                    <a href="#">Certificates&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="5index.html">Birth Certificates</a></li>
+                        <li><a href="1index.html">Death Certificates</a></li>
+                        <li><a href="1.2index.html">Marriage Certificates</a></li>
+                    </ul>
+              <li class="dropdown">
+                    <a href="#">Gallary&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="2index.html#photos">Photos</a></li>
+                        <li><a href="#video">Videos</a></li>
+                    </ul> 
+                    <li class="dropdown">
+                        <a href="#">Login&#9662;</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="11index.html">Login</a></li>
+                            <li><a href="8index.html">Register</a></li> 
+                        </ul>
+                    </li>                
+                </li>
+               </li>
+            </ul>
+        </div> 
+    </div>
+    
+        <div class="content">
+            <h1>E-Gram Panchayat &<br><span>Sabha</span> <br>Amadade</h1>
+            <h2 id="since">(since - 1983 )</h2>
+            <p>A "Gram Panchayat" is a basic governing body at the
+                village level in India, <br>essentially acting as a
+                village council,where elected members represent
+                the community and are <br>responsible for managing 
+                local development issues likesanitation,water 
+                supply, and other essential<br> services within the 
+                village;the head of a Gram Panchayat is called 
+                a "Sarpanch" or "Pradhan"</p>
+            </div>
+    </div>
+    <!-- image    slider -->
+<section>
+    <div class="rotator-h1">
+        <h1>Current Affairs And notice Board</h1>
+    </div>
+    <div class="rotator">
+        <img src="h1.jpg?text=Image+1" class="active">
+        <img src="s2.jpg?text=Image+2">
+        <img src="v1.jpg?text=Image+3">
+        <img src="m1.jpg?text=Image+3">
+    </div>
+    <script>
+        let index = 0;
+        const images = document.querySelectorAll('.rotator img');
+        
+        function rotateImages() {
+            images[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+        }
+        
+        setInterval(rotateImages, 3000);
+    </script>
+</section>
+<!--  project developments -->
+<section class="development-tracker">
+    <h2>Village Development Projects</h2>
+
+    <!-- Filter Buttons -->
+    <div class="filters">
+        <button onclick="filterProjects('all')">All</button>
+        <button onclick="filterProjects('ongoing')">Ongoing</button>
+        <button onclick="filterProjects('completed')">Completed</button>
+        <button onclick="filterProjects('upcoming')">Upcoming</button>
+    </div>
+
+    <!-- Project List -->
+    <div class="project-list">
+        <div class="project ongoing">
+            <h3>Water Supply Expansion</h3>
+            <p>Status: Ongoing</p>
+            <p>Cost: 7.2 Lakhs</p>
+            <p>Issued Date: 12/5/24</p>
+            <p>Deadline Date: 23/7/25</p>
+            <p>Issued by: GOVT OF MAHARASHTRA</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 70%;">70%</div>
+            </div>
+        </div>
+
+        <div class="project completed">
+            <h3>New Road Construction</h3>
+            <p>Status: Completed</p>
+            <p>Cost: 73.23 Lakhs</p>
+            <p>Issued Date: 12/5/24</p>
+            <p>Deadline Date: 23/7/25</p>
+            <p>Issued by: GOVT OF MAHARASHTRA</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 100%;">100%</div>
+            </div>
+        </div>
+
+        <div class="project upcoming">
+            <h3>Pest Control Machine Setup</h3>
+            <p>Status: Upcoming</p>
+            <p>Cost: 7.2 Lakhs</p>
+            <p>Issued Date: 12/5/25</p>
+            <p>Deadline Date: Not Declared</p>
+            <p>Issued by: GOVT OF MAHARASHTRA</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 10%;">10%</div>
+            </div>
+        </div>
+
+        <div class="project ongoing">
+            <h3>Solar Street Lights</h3>
+            <p>Status: Ongoing</p>
+            <p>Cost: 34.78 Lakhs</p>
+            <p>Issued Date: 12/5/24</p>
+            <p>Deadline Date: 23/7/25</p>
+            <p>Issued by: GOVT OF MAHARASHTRA</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 40%;">40%</div>
+            </div>
+        </div>
+
+        <div class="project upcoming">
+            <h3>Eco-Friendly Techniques</h3>
+            <p>Status: Upcoming</p>
+            <p>Cost: 17.21 Lakhs</p>
+            <p>Issued Date: 17/6/25</p>
+            <p>Deadline Date: Not Declared</p>
+            <p>Issued by: GOVT OF MAHARASHTRA</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 17%;">17%</div>
+            </div>
+        </div>
+
+        <div class="project completed">
+            <h3>Village Community Hall</h3>
+            <p>Status: Completed</p>
+            <p>Cost: 27.12 Lakhs</p>
+            <p>Issued Date: 12/5/24</p>
+            <p>Deadline Date: 23/7/25</p>
+            <p>Issued by: GOVT OF MAHARASHTRA</p>
+            <div class="progress-bar">
+                <div class="progress" style="width: 100%;">100%</div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <div class="content3">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Gram Panchayat , Amadade</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Name  :</strong></td>
+                    <td>Patil Shekhar</td>
+                </tr>
+                <tr>
+                    <td><strong>Post Name </strong></td>
+                    <td>Sarpanch</td>
+                </tr>
+                <tr>
+                    <td><strong>Address  :</strong></td>
+                    <td>Gram Panchayat Amadade</td>
+                </tr>
+                <tr>
+                    <td><strong>Telephone  :</strong></td>
+                    <td>0231-8675-5788</td>
+                </tr>
+                <tr>
+                    <td><strong>Email  :</strong></td>
+                    <td>Sarpanch@gmail.com</td>
+                </tr>
+                </tr>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+  
+   <div class="card">
+    <h1> Village at a Glance </h1>
+    <div class="details">
+        <div class="detail-item">
+            <div class="icon"></div>
+            <div>Area: 1696.59 hectares</div>
+        </div>
+        <div class="detail-item">
+            <div class="icon"></div>
+            <div>Population: 7,986</div>
+        </div>
+        <div class="detail-item">
+            <div class="icon"></div>
+            <div>Literacy :64.74%</div>
+        </div>
+        <div class="detail-item">
+            <div class="icon"></div>
+            <div>Houses: 1163</div>
+        </div>
+        <div class="detail-item">
+            <div class="icon"></div>
+            <div>Village Code: 527688</div>
+        </div>
+        <div class="detail-item">
+            <div class="icon"></div>
+            <div>Assembly Constituency: Erandol</div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <h1>Helpline Desk</h1>
+    <ul>
+        <li><span>Distric Helpline Center(Covid-19)</span> - 0231-2545473, 0231-2659232, 8669052600</li>
+        <li><span>Citizans Call Center</span> - 155300</li>
+        <li><span>child Helpline</span> - 1098</li>
+        <li><span>Women Helpline number</span> - 1091</li>
+        <li><span>Legal Proctector</span> - 1090</li>
+        <li><span>Commision Helpline</span> - 1070</li>
+        <li><span>Election</span> - 1950</li>
+        <li><span>Police</span> - 100</li>
+        <li><span>Ambulance</span> - 108</li>
+        <li><span>NIC Help Desk</span> - 1800-111-555</li>
+        <li><span>MAHAPAR</span> - 02222794298</li>
+    </ul>
+</div>
+
+    </div>
+    <section class="about">
+        <div id="photos"></div>
+        <h1>Village Gallery</h1>
+        <div class="gallery">
+        <div class="gallery-item">
+            <img src="v1.jpg" alt="Image 1">
+            <div class="overlay"><h2>Nature Beauty</h2></div>
+        </div>
+        <div class="gallery-item">
+            <img src="m2.jpg" alt="Image 2">
+            <div class="overlay"><h2>City Lights</h2></div>
+        </div>
+        <div class="gallery-item">
+            <img src="v2.jpg" alt="Image 3">
+            <div class="overlay"><h2>Ocean View</h2></div>
+        </div>
+        <div class="gallery-item">
+            <img src="s2.jpg" alt="Image 4">
+            <div class="overlay"><h2>Mountain Escape</h2></div>
+        </div>
+        <div class="gallery-item">
+            <img src="s1.jpg" alt="Image 5">
+            <div class="overlay"><h2>Mountain Escape</h2></div>
+        </div> 
+        <div class="gallery-item">
+            <img src="m1.jpg" alt="Image 6">
+            <div class="overlay"><h2>Mountain Escape</h2></div>
+        </div>
+    </div>
+    
+        <!-- Video Section -->
+    </div>
+    <section class="video-section">
+        <div id="video"> </div>
+        <h2>Village Video</h2>
+        <div class="video-container">
+            <div>
+            <video controls muted loop>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+            <div class="video-container h1">
+            <video controls muted loop>
+                <source src="drone.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+            </div>
+
+        </div>  
+    </section>
+    </div>
+    <div class="profile-container">
+        <div id="Staff"></div>
+    <div class="profile-card">
+        <h1>Head</h1>
+        <img src="yasu2.jpg" alt="PostHolder Photo" class="profile-img">
+        <div class="name">Patil Shekhar</div>
+        <div class="position">Sarpanch</div>
+        <div class="contact">
+            <p>Email: <a href="E-Gram@gmail.com">E-Gram@gmail.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+        </div>
+    </div>
+    <div class="profile-card">
+        <h1>Sub-Head</h1>
+        <img src="sanket.jpg" alt="PostHolder Photo" class="profile-img">
+        <div class="name">Sanket Tayade</div>
+        <div class="position">Gramsevak</div>
+        <div class="contact">
+            <p>Email: <a href="E-Gram@gmail.com">E-Gram@gmail.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 234 567 890</a></p>
+        </div>
+    </div>
+</div>
+    </div>
+    </div>
+
+    </section>
+</div>
+   </div>
+   <section>
+    <div class="notice-board">
+        <div class="notices">
+            <div class="notice">📢 Notice 1: Website will be under maintenance this Sunday.</div>
+            <div class="notice">🚀 Notice 2: New features are launching next week!</div>
+            <div class="notice">🔔 Notice 3: Please update your account information.</div>
+            <div class="notice">🎉 Notice 4: Special discounts are available for members.</div>
+        </div>
+    </div>
+   </section>
+    <header class="header.h1">
+        <h1>Today's News</h1>
+    </header>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="news-card">
+            <h2>NewsPaper</h2>
+            <p class="news-description">In 2025,Read the various newspapers...</p>
+            <a href="https://epaper.lokmat.com/main-editions/Jalgaon%20Main/-1/1" class="read-more">Read More</a>
+        </div>
+    </section>
+<footer>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>i have committed to delivering 
+                    the best services to my village peoples with a focus on
+                     quality and innovation.</p>
+            </div>
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="2index.html">Home</a>
+                <a href="https://bhulekh.mahabhumi.gov.in/">7/12</a>
+                <a href="6index.html">Schemes</a>
+                <a href="3index.html">About Us</a>
+                <a href="4index.html">Events</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: E-Gram@gmail.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: Amadade,Bhadgaon,India.</p>
+                <div class="social-icons">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <!-- Google Map -->
+            <div class="footer-section">
+                <h3>Our Location</h3>
+                <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59705.92375701393!2d75.19800449030689!3d20.7256404266985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd94405a77776a1%3A0x17b5823506c5acf4!2sAmadade%2C%20Maharashtra%20424105!5e0!3m2!1sen!2sin!4v1738258577287!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 E-Gram Panchayat, Amadade &#127963; All rights reserved &#128218; Design By Harsh &#128279;</p>
+
+        </div>
+</footer> 
+</footer>
+</div>
+<script>
+    function filterProjects(status) {
+        let projects = document.querySelectorAll('.project');
+
+        projects.forEach(project => {
+            if (status === 'all' || project.classList.contains(status)) {
+                project.style.display = 'flex'; // Keep layout intact
+            } else {
+                project.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

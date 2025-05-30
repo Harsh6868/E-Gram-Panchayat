@@ -1,0 +1,511 @@
+<html>
+<head>
+    <title>Welcome to E-Gram Panchayat</title>
+    <!-- <link rel="stylesheet" href="1style.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+<style>
+    *{  margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    user-select: none;body{
+    overflow-x: hidden;
+    }
+}
+.body {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.navbar{
+    width: 100%;
+    height: 4%;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    align-items: center; 
+    background-color: rgba(31, 41, 40, 0.644);
+    border-bottom: 3px solid rgb(224, 249, 0);
+    backdrop-filter: blur(50px);  
+    font-size: 20px;
+}
+ .logo{
+    height: 90px;
+    cursor: pointer;
+    padding:0px 10px 50px 20px ;
+    margin-top: 50px; 
+ }
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative; 
+} 
+.navbar ul li a{
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    text-transform: uppercase;
+}
+/* .navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 10px;
+    bottom: -10;
+    transition: 0.5s;
+} */
+.navbar ul li:hover::after{
+    width: 80%;
+} 
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: -13px;
+    background: #ffdc13;
+    display: none;
+    min-width: 150px;
+   z-index: 5;
+}
+
+.dropdown{
+    padding: 32px 0;
+    /* background-color: red; */
+}
+.dropdown:hover .dropdown-menu{
+    display: flex;
+}
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    display: block;
+    /* color: white; */
+    color: rgb(0, 0, 0) !important;
+}
+
+.dropdown-menu a:hover {
+    background: #666;
+}
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.form-container {
+    width: 50%;
+    margin: auto;
+}
+form input, form textarea, form select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+}
+button {
+    background: rgb(6, 72, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.certificate {
+    border: 2px solid #000;
+    padding: 20px;
+    margin: auto;
+    width: 60%;
+}
+
+.hidden {
+    display: none;
+}
+
+.certificate-header {
+    text-align: center;
+    padding-bottom: 10%;
+}
+.certificate-header{
+    h3{
+        border-bottom: 3px solid;
+        padding-bottom: 5px;
+    }
+}
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0;
+}
+
+.logo-left, .logo-right {
+    width: 100px;
+    height: auto;
+}
+
+.signature-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.signature {
+    width: 300px;
+    /* justify-items: center; */
+    padding-left: -70%;
+}
+
+.stamp {
+    width: 120px;
+    margin-top: 10px;
+}
+.two-column {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.two-column div {
+    width: 48%;
+}
+
+.two-column .left p{
+    /* display: flex;
+    flex-wrap: wrap; */
+    gap: 15px;
+    line-height: 1.8;
+}
+.two-column .right p{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        line-height: 1.8;
+}
+
+/* footer section */
+.footer {
+    background: #000000;
+    color: #fff;
+    padding: 40px 10%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.footer-section p, 
+        .footer-section a {
+            font-size: 14px;
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff9800;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            background: #444;
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            transition: 0.3s ease;
+        }
+        .social-icons a:hover {
+            background: #ff9800;
+        }
+
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Google Map */
+        .map-container {
+            width: 100%;
+            max-width: 350px;
+            height: 200px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Copyright Section */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        text-align: center;
+    }
+}
+</style>
+</head>
+        <div class="navbar">
+            <img src="State_logo (1).png" class="logo"> 
+            <ul>
+                <li><a href="2index.html">Home</a></li>
+                <li><a href="3index.html">About Us</a></li>
+                <li><a href="https://bhulekh.mahabhumi.gov.in/">7/12</a></li>
+                <li><a href="#Staff">Staff</a></li>
+                <li><a href="4index.html">Events</a></li>
+                <li><a href="7index.html">Complaint</a></li>
+                <li class="dropdown">
+                    <a href="#">Schemes&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">PM Kisan</a></li>
+                        <li><a href="#">Gram-Sadak</a></li>
+                        <li><a href="#">Swatch Bharat</a></li>
+                    </ul>
+            <li class="dropdown">
+                    <a href="#">Certificates&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="5index.html">Birth Certificates</a></li>
+                        <li><a href="1index.html">Death Certificates</a></li>
+                        <li><a href="1.2index.html">Marriage Certificates</a></li>
+                    </ul>
+              <li class="dropdown">
+                    <a href="#">Gallary&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="2index.html#photos">Photos</a></li>
+                        <li><a href="#video">Videos</a></li>
+                    </ul> 
+                    <li class="dropdown">
+                        <a href="#">Login&#9662;</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="11index.html">Login</a></li>
+                            <li><a href="8index.html">Register</a></li> 
+                        </ul>
+                    </li>                
+                </li>
+               </li>
+            </ul>
+        </div> 
+        
+    <!-- </div> -->
+    <div>
+<section>
+    <div class="form-container">
+        <h2>Death Certificate Form</h2>
+        <form id="deathForm">
+            <label>Deceased Name:</label>
+            <input type="text" id="deceasedName" required>
+    
+            <label>Father's Name:</label>
+            <input type="text" id="fatherName" required>
+    
+            <label>Mother's Name:</label>
+            <input type="text" id="motherName" required>
+    
+            <label>Date of Death:</label>
+            <input type="date" id="dateOfDeath" required>
+    
+            <label>Aadhar Number:</label>
+            <input type="text" id="aadharNo" required>
+    
+            <label>Place of Death:</label>
+            <input type="text" id="placeOfDeath" required>
+    
+            <label>Cause of Death:</label>
+            <input type="text" id="causeOfDeath" required>
+    
+            <label>Sex:</label>
+            <select id="sex" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+    
+            <label>Address:</label>
+            <textarea id="address" required></textarea>
+    
+            <label>Registration Number:</label>
+            <input type="text" id="registrationNo" required>
+    
+            <label>Date of Issue:</label>
+            <input type="date" id="dateOfIssue" required>
+    
+            <button type="button" onclick="generateCertificate()">Generate Certificate</button>
+        </form>
+    </div>
+    
+    <div id="certificate" class="certificate hidden">
+        <div class="certificate-header">
+            <div class="logo-container">
+            <img src="State_logo (1).png" alt="Government Logo" class="logo-left">
+            <img src="State_logo (1).png" alt="Government Logo" class="logo-right">
+        </div>
+            <h2 style="color: rgb(233, 19, 19);">महाराष्ट्र शासन</h2>
+            <h2 style="color: rgb(233, 19, 19);">GOVERNMENT OF MAHARASHTRA</h2>
+            <h2 style="color: rgb(233, 19, 19);">आरोग्य विभाग</h2>
+            <h2 style="color: rgb(233, 19, 19);">Health Department</h2>
+            <h3>Form 5</h3>
+            <h2>मृत्यू प्रमाणपत्र</h2>
+            <h2>DEATH CERTIFICATE</h2>
+        
+    </div>
+    
+        <p>This is to certify that the following information has been recorded:</p>
+    
+        <div class="two-column">
+            <div class="left">
+                <p><strong>Deceased Name:</strong><span id="certDeceasedName"></span></p>
+                <p><strong>Father's Name:</strong> <span id="certFatherName"></span></p>
+                <p><strong>Mother's Name:</strong> <span id="certMotherName"></span></p>
+                <p><strong>Date of Death:</strong> <span id="certDateOfDeath"></span></p>
+                <p><strong>Aadhar Number:</strong> <span id="certAadharNo"></span></p>
+            </div>
+            
+            <div class="right">
+                <p><strong>Place of Death:</strong> <span id="certPlaceOfDeath"></span></p>
+                <p><strong>Cause of Death:</strong> <span id="certCauseOfDeath"></span></p>
+                <p><strong>Sex:</strong> <span id="certSex"></span></p>
+                <p><strong>Address:</strong> <span id="certAddress"></span></p>
+                <p><strong>Registration Number:</strong> <span id="certRegistrationNo"></span></p>
+                <p><strong>Date of Issue:</strong> <span id="certDateOfIssue"></span></p>
+            </div>
+        </div>
+    
+        <div class="signature-section">
+            <div>
+                <p>Registrar's Signature</p>
+                <img src="signature.png" alt="Digital Signature" class="signature">
+            </div>
+            <div>
+                <p>Official Stamp</p>
+                <img src="stamp amadade.jpg" alt="Official Stamp" class="stamp">
+            </div>
+        </div>
+    
+        <p><strong>Registrar of Deaths</strong></p>
+        <button onclick="printCertificate()">Print Certificate</button>
+    </div>
+    
+    <script>
+        function generateCertificate() {
+            document.getElementById("certDeceasedName").innerText = document.getElementById("deceasedName").value;
+            document.getElementById("certFatherName").innerText = document.getElementById("fatherName").value;
+            document.getElementById("certMotherName").innerText = document.getElementById("motherName").value;
+            document.getElementById("certDateOfDeath").innerText = document.getElementById("dateOfDeath").value;
+            document.getElementById("certAadharNo").innerText = document.getElementById("aadharNo").value;
+            document.getElementById("certPlaceOfDeath").innerText = document.getElementById("placeOfDeath").value;
+            document.getElementById("certCauseOfDeath").innerText = document.getElementById("causeOfDeath").value;
+            document.getElementById("certSex").innerText = document.getElementById("sex").value;
+            document.getElementById("certAddress").innerText = document.getElementById("address").value;
+            document.getElementById("certRegistrationNo").innerText = document.getElementById("registrationNo").value;
+            document.getElementById("certDateOfIssue").innerText = document.getElementById("dateOfIssue").value;
+    
+            document.getElementById("certificate").classList.remove("hidden");
+        }
+    
+        function printCertificate() {
+            let certificate = document.getElementById("certificate").innerHTML;
+            let originalContent = document.body.innerHTML;
+    
+            document.body.innerHTML = certificate;
+            window.print();
+            document.body.innerHTML = originalContent;
+        }
+    </script>
+    
+</Section>
+            <footer class="footer">
+                <div class="footer-container">
+                    
+                    <!-- About Section -->
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <p>i have committed to delivering 
+                            the best services to my village peoples with a focus on
+                             quality and innovation.</p>
+                    </div>
+        
+                    <!-- Quick Links -->
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <a href="2index.html">Home</a>
+                        <a href="https://bhulekh.mahabhumi.gov.in/">7/12</a>
+                        <a href="6index.html">Schemes</a>
+                        <a href="3index.html">About Us</a>
+                        <a href="4index.html">Events</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                    <!-- Contact Info -->
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <p>Email: E-Gram@gmail.com</p>
+                        <p>Phone: +123 456 7890</p>
+                        <p>Address: Amadade,Bhadgaon,India.</p>
+                        <div class="social-icons">
+                            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Twitter"></a>
+                            <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Instagram"></a>
+                        </div>
+                    </div>
+                    <!-- Google Map -->
+                    <div class="footer-section">
+                        <h3>Our Location</h3>
+                        <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59705.92375701393!2d75.19800449030689!3d20.7256404266985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd94405a77776a1%3A0x17b5823506c5acf4!2sAmadade%2C%20Maharashtra%20424105!5e0!3m2!1sen!2sin!4v1738258577287!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+        
+                </div>
+        
+                <!-- Copyright -->
+                <div class="footer-bottom">
+                    <p>&copy; 2025 E-Gram Panchayat,Amadade 🏛 All rights reserved  📚 Design By Harsh 🔗</i></p>
+                </div>
+            </footer>
+    </div>
+</html>

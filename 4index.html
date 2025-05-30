@@ -1,0 +1,393 @@
+<html>
+<head>
+    <title>Welcome to E-Gram Panchayat</title>
+    <!-- <link rel="stylesheet" href="4style.css"> -->
+    <meta charset="UTF-8">
+<style>*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    user-select: none;
+}
+
+body{
+    overflow-x: hidden;
+}
+.navbar{
+    width: 100%;
+    height: 4%;
+    margin: auto;
+    padding: 30px 0;
+    display: flex;
+    align-items: center; 
+    background-color: rgba(31, 41, 40, 0.644);
+    border-bottom: 3px solid rgb(224, 249, 0);
+    backdrop-filter: blur(50px);  
+    font-size: 20px;
+}
+ .logo{
+    height: 90px;
+    cursor: pointer;
+    padding:0px 10px 50px 20px ;
+    margin-top: 50px; 
+ }
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative; 
+} 
+.navbar ul li a{
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    text-transform: uppercase;
+}
+/* .navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 10px;
+    bottom: -10;
+    transition: 0.5s;
+} */
+.navbar ul li:hover::after{
+    width: 80%;
+} 
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: -13px;
+    background: #ffc400;
+    display: none;
+    min-width: 150px;
+   z-index: 10;
+}
+
+.dropdown{
+    padding: 32px 0;
+    /* background-color: red; */
+}
+.dropdown:hover .dropdown-menu{
+    display: flex;
+}
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    display: block;
+    /* color: white; */
+    color: rgb(0, 0, 0) !important;
+}
+
+.dropdown-menu a:hover {
+    background: #666;
+}
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+/* events section */
+.events {
+    padding: 50px 20px;
+    background: url('plantation') no-repeat center center/cover;
+    margin: auto;
+    box-shadow: 0px 0px 100px black;
+
+
+}
+.events h1 {
+    color: #8B0000;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #6fff00;
+}
+
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.event-card {
+    /* background: #ee3705; */
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+    box-shadow: 0px 0px 50px black;
+}
+
+.event-card:hover {
+    transform: scale(1.05);
+}
+
+.event-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.event-card h2 {
+    color: #8B0000;
+    margin: 15px 0 10px;
+}
+
+.event-card p {
+    color: #333;
+    font-size: 16px;
+}
+button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #218838;
+} 
+/* footer section */
+.footer {
+    background: #222;
+    color: #fff;
+    padding: 40px 10%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.footer-section p, 
+        .footer-section a {
+            font-size: 14px;
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff9800;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            background: #444;
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            transition: 0.3s ease;
+        }
+        .social-icons a:hover {
+            background: #ff9800;
+        }
+
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Google Map */
+        .map-container {
+            width: 100%;
+            max-width: 350px;
+            height: 200px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Copyright Section */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="State_logo (1).png" class="logo"> 
+        <ul>
+            <li><a href="2index.html">Home</a></li>
+            <li><a href="3index.html">About Us</a></li>
+            <li><a href="https://bhulekh.mahabhumi.gov.in/">7/12</a></li>
+            <li class="dropdown">
+                <a href="#">Taxes&#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="hometax.php">Home Tax</a></li>
+                    <li><a href="watertax.php">Water Tax</a></li>
+                </ul> 
+            <li><a href="4index.html">Events</a></li>
+            <li><a href="7index.html">Complaint</a></li>
+            <li class="dropdown">
+                <a href="6index.html">Schemes&#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://pmkisan.gov.in/">PM Kisan</a></li>
+                    <li><a href="https://omms.nic.in/">Gram-Sadak</a></li>
+                    <li><a href="https://swachhbharatmission.ddws.gov.in/">Swatch Bharat</a></li>
+                </ul>
+        <li class="dropdown">
+                <a href="#">Certificates&#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="5index.html">Birth Certificates</a></li>
+                    <li><a href="1index.html">Death Certificates</a></li>
+                    <li><a href="1.2index.html">Marriage Certificates</a></li>
+                </ul>
+          <li class="dropdown">
+                <a href="#">Gallary&#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="2index.html#photos">Photos</a></li>
+                    <li><a href="#video">Videos</a></li>
+                </ul> 
+                <li class="dropdown">
+                    <a href="#">Login&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="11index.html">Login</a></li>
+                        <li><a href="8index.html">Register</a></li> 
+                    </ul>
+                </li>                
+            </li>
+           </li>
+        </ul>
+    </div> 
+    <!-- enents section -->
+    <section class="events">
+        <h1>Gram Panchayat Events(Gram Panchayat Events)</h1>
+        <div class="event-container">
+            <div class="event-card">
+                <img src="clean.jpg" alt="Cleanliness Drive">
+                <h2>Cleanliness Drive</h2>
+                <p>Village Cleaning Specific Method.</p>
+                <button><a href="https://www.mygov.in/task/cleanliness-drive-swachh-bharat/">Read More</a></button>
+            </div>
+            <div class="event-card">
+                <img src="plants.jpg" alt="Tree Plantation">
+                <h2>Tree Plantation</h2>
+                <p>Tree Plantation for Balancing Environment.</p>
+                <button><a href="https://www.parvaah.org/our-campaigns/tree-plantation-drive.html">Read More</a></button>
+            </div>
+            <div class="event-card">
+                <img src="health.jpg" alt="Health Camp">
+                <h2> Health Camp</h2>
+                <p>Free Health Camp And Medical Treatment.</p>
+                <button><a href="https://www.jeevandayee.gov.in/MJPJAY/EXT_IMAGES/documents/workflow.pdf">Read More</a></button>
+            </div>
+            <div class="event-card">
+                <div id="women"></div>
+                <img src="women.jpg" alt="Women Empowerment">
+                <h2>Women Empowerment</h2>
+                <p>Empowerment Women Through Employeement</p>
+                <!-- <button>Read More</button> -->
+                <button><a href="https://www.unfpa.org/resources/issue-7-women-empowerment"> Read More</a></button>
+            </div>
+        </div>
+    </section>
+<!-- footer section -->
+    <footer>
+        <footer class="footer">
+            <div class="footer-container">
+                
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>i have committed to delivering 
+                        the best services to my village peoples with a focus on
+                         quality and innovation.</p>
+                </div>
+    
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="2index.html">Home</a>
+                    <a href="https://bhulekh.mahabhumi.gov.in/">7/12</a>
+                    <a href="6index.html">Schemes</a>
+                    <a href="3index.html">About Us</a>
+                    <a href="4index.html">Events</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: E-Gram@gmail.com</p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: Amadade,Bhadgaon,India.</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Twitter"></a>
+                        <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Instagram"></a>
+                    </div>
+                </div>
+                <!-- Google Map -->
+                <div class="footer-section">
+                    <h3>Our Location</h3>
+                    <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59705.92375701393!2d75.19800449030689!3d20.7256404266985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd94405a77776a1%3A0x17b5823506c5acf4!2sAmadade%2C%20Maharashtra%20424105!5e0!3m2!1sen!2sin!4v1738258577287!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 E-Gram Panchayat,Amadade 🏛 All rights reserved  📚 Design By Harsh 🔗</i></p>
+            </div>
+    </footer> 
+</body>   
+</html>

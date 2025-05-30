@@ -1,0 +1,726 @@
+<html>
+<head>
+    <title>Welcome to E-Gram Panchayat</title>
+    <!-- <link rel="stylesheet" href="5style.css"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <style>
+        *{  margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    user-select: none;body{
+    overflow-x: hidden;
+    }
+}
+.body {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+}
+.navbar{
+    width: 100%;
+    height: 4%;
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    align-items: center; 
+    background-color: rgba(31, 41, 40, 0.644);
+    border-bottom: 3px solid rgb(224, 249, 0);
+    backdrop-filter: blur(50px);  
+    font-size: 20px;
+}
+ .logo{
+    height: 90px;
+    cursor: pointer;
+    padding:0px 10px 50px 20px ;
+    margin-top: 50px; 
+ }
+
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative; 
+} 
+.navbar ul li a{
+    text-decoration: none;
+    color: rgb(245, 245, 245);
+    text-transform: uppercase;
+}
+/* .navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 10px;
+    bottom: -10;
+    transition: 0.5s;
+} */
+.navbar ul li:hover::after{
+    width: 80%;
+} 
+.dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: -13px;
+    background: #ffdc13;
+    display: none;
+    min-width: 150px;
+   z-index: 5;
+}
+
+.dropdown{
+    padding: 32px 0;
+    /* background-color: red; */
+}
+.dropdown:hover .dropdown-menu{
+    display: flex;
+}
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    display: block;
+    /* color: white; */
+    color: rgb(0, 0, 0) !important;
+}
+
+.dropdown-menu a:hover {
+    background: #666;
+}
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.form-container {
+    background: white;
+    padding: 100px;
+    margin: auto;
+    margin-top: 3%;
+    border: 2px solid black;
+    text-align: center;
+    width: 350px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 5px 0;
+    padding: 8px;
+}
+
+button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.certificate{
+    width: 400px;
+    background: white;
+    /* padding: 30px; */
+    border: 3px solid black;
+    text-align: center;
+}
+
+.certificate-header {
+    h3 {
+        border-bottom: 3px solid black;
+        padding-bottom: 5px;
+        margin-bottom: 10%;
+        /* display: inline-block; */
+    }
+    
+}
+h4 {
+    text-align: center;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', serif;
+    /* border-bottom: 2px solid #000; */
+    padding-bottom: 30px;
+    margin-top: -60px; /* Move it upward */
+}
+
+.logo {
+    width: 70px;
+}
+.three-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds vertical space between each section */
+}
+
+.three-column .left {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* ✅ Make Residing At + Taluka + District Inline */
+.three-column .left p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    line-height: 1.8;
+}
+
+/* ✅ Make Taluka + District appear in front of Residing At */
+.three-column .left p span {
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+/* ✅ Improve Font + Layout */
+.three-column p strong {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* ✅ Add border-bottom like a government certificate */
+/* .three-column p {
+    border-bottom: 1px dotted black;
+    padding-bottom: 3px;
+} */
+
+/* ✅ Give space between two sections */
+.three-column .left {
+    margin-bottom: 15px;
+}
+
+/* ✅ Perfect Margin For Taluka + District */
+.three-column .left p strong,
+.three-column .left p span {
+    margin-right: 5px;
+}
+.three-column .left p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    line-height: 1.8;
+}
+.three-column .right p{
+    gap: 5px;
+}
+.three-column .right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adjust gap size */
+}
+
+.signature-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.signature {
+    width: 120px;
+}
+
+.stamp {
+    width: 500px;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+.center h1{
+ padding-top: 15%;
+ font-size: clamp(10px, 2vw, 16px); /* Adjusts size dynamically */
+}
+.right h1{
+    padding-top: 15%;
+    font-size: clamp(10px, 2vw, 16px); /* Adjusts size dynamically */
+   }
+/* footer section */
+.footer {
+    background: #000000;
+    color: #fff;
+    padding: 40px 10%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.footer-section p, 
+        .footer-section a {
+            font-size: 14px;
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff9800;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            background: #444;
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            transition: 0.3s ease;
+        }
+        .social-icons a:hover {
+            background: #ff9800;
+        }
+
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Google Map */
+        .map-container {
+            width: 100%;
+            max-width: 350px;
+            height: 200px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Copyright Section */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        text-align: center;
+    }
+}
+    </style>
+
+</head>
+<body>
+    <div class="navbar">
+        <img src="State_logo (1).png" class="logo"> 
+        <ul>
+            <li><a href="2index.html">Home</a></li>
+            <li><a href="3index.html">About Us</a></li>
+            <li><a href="https://bhulekh.mahabhumi.gov.in/">7/12</a></li>
+            <li class="dropdown">
+                <a href="#">Taxes&#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="hometax.php">Home Tax</a></li>
+                    <li><a href="watertax.php">Water Tax</a></li>
+                </ul> 
+            <li><a href="4index.html">Events</a></li>
+            <li><a href="7index.html">Complaint</a></li>
+            <li class="dropdown">
+                <a href="6index.html">Schemes&#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://pmkisan.gov.in/">PM Kisan</a></li>
+                    <li><a href="https://omms.nic.in/">Gram-Sadak</a></li>
+                    <li><a href="https://swachhbharatmission.ddws.gov.in/">Swatch Bharat</a></li>
+                </ul>
+        <li class="dropdown">
+                <a href="#">Certificates&#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="5index.html">Birth Certificates</a></li>
+                    <li><a href="1index.html">Death Certificates</a></li>
+                    <li><a href="1.2index.html">Marriage Certificates</a></li>
+                </ul>
+          <li class="dropdown">
+                <a href="#">Gallary&#9662;</a>
+                <ul class="dropdown-menu">
+                    <li><a href="2index.html#photos">Photos</a></li>
+                    <li><a href="#video">Videos</a></li>
+                </ul> 
+                <li class="dropdown">
+                    <a href="#">Login&#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="11index.html">Login</a></li>
+                        <li><a href="8index.html">Register</a></li> 
+                    </ul>
+                </li>                
+            </li>
+           </li>
+        </ul>
+    </div>
+    
+</div> 
+
+<section>
+    <div class="form-container">
+        <h2>Birth Certificate Form</h2>
+        <form id="birthForm">
+            <label>Baby's Name:</label>
+            <input type="text" id="BabyName" required>
+
+            <label>Father's Name:</label>
+            <input type="text" id="FatherName" required>
+
+            <label>Father AddharNo:</label>
+            <input type="text" id="FatherAddharNo" required>
+
+            <label>Mother's Name:</label>
+            <input type="text" id="MotherName" required>
+
+            <label>Time Of Birth:</label>
+            <input type="text" id="Time" required>
+
+                <label>Sex:</label>
+                <select id="Sex" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>           
+            <label>Place:</label>
+            <input type="text" id="Place" required>
+
+            <label>Taluka:</label>
+            <input type="text" id="BabysTal" required>
+
+            <label>District:</label>
+            <input type="text" id="BabysDist" required>
+
+            <label>Date of Birth:</label>
+            <input type="date" id="Date" required>
+
+            <label>Registration No:</label>
+            <input type="text" id="RegisterNo" required>
+
+            <label>Address of Birth:</label>
+            <input type="text" id="Address" required>
+
+            <button type="button" onclick="generateCertificate()">Generate Certificate</button>
+        </form>
+    </div>
+
+    <!-- Birth Certificate -->
+    <div id="certificate" class="certificate hidden">
+        <div class="certificate-header">
+            <img src="State_logo (1).png" alt="Government Logo" class="logo">
+            <h2 style="color: rgb(233, 19, 19);"> महाराष्ट्र शासन</h2>
+            <h2 style="color: rgb(233, 19, 19);">GOVERNMENT OF MAHARASHTRA</h2>
+            <h2 style="color: rgb(233, 19, 19);">आरोग्य विभाग</h2>
+            <h2 style="color: rgb(233, 19, 19);">HEALTH DEPARTMENT</h2>
+            <h3 style="color: rgb(233, 19, 19);">FORM-5</h3>
+
+       
+            <h4>Birth Certificate</h4>
+            <!-- <img src="State_logo (1).png" class="logo" alt="State Logo"> -->
+        </div>
+
+
+        <div class="three-column">
+            <div class="left">
+                <p><strong>Baby's Name:</strong> <span id="certBabyName"></span></p>
+                <p><strong>Father's Name:</strong> <span id="certFatherName"></span></p>
+                <p><strong>Father Addhar No:</strong> <span id="certFatherAddharNo"></span></p>
+                <p><strong>Mother's Name:</strong> <span id="certMotherName"></span></p>
+            </div>
+        
+            <div class="right">
+                <p><strong>Time of Birth:</strong> <span id="certTime"></span></p>
+                <p><strong>Sex:</strong> <span id="certSex"></span></p>
+                <p><strong>Place:</strong> <span id="certPlace"></span></p>
+            </div>
+        </div>
+
+        <div class="three-column">
+            <div class="left">
+                <p><strong>Taluka:</strong> <span id="certTal"></span></p>
+                <p><strong>District:</strong> <span id="certDist"></span></p>
+            </div>
+            <div class="right">
+                <p><strong>Date of Birth:</strong> <span id="certDate"></span></p>
+                <p><strong>Registration No:</strong> <span id="certRegisterNo"></span></p>
+                <p><strong>Address:</strong> <span id="certAddress"></span></p>
+            </div>
+        </div>
+
+        <div class="signature-section">
+            <div>
+                <p>Registrar's Signature</p>
+                <p><strong>Harshal Patil</strong></p>
+            </div>
+            <div>
+                <p>Official Stamp</p>
+                <img src="stamp amadade.jpg" alt="Official Stamp" class="stamp">
+            </div>
+        </div>
+
+        <p><strong>Registrar of Births</strong></p>
+        <button onclick="printCertificate()">Print Certificate</button>
+    </div>
+
+</section>
+<!-- footer section -->
+<footer>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>i have committed to delivering 
+                    the best services to my village peoples with a focus on
+                     quality and innovation.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="2index.html">Home</a>
+                <a href="https://bhulekh.mahabhumi.gov.in/">7/12</a>
+                <a href="6index.html">Schemes</a>
+                <a href="3index.html">About Us</a>
+                <a href="4index.html">Events</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <!-- Contact Info -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: E-Gram@gmail.com</p>
+                <p>Phone: +123 456 7890</p>
+                <p>Address: Amadade,Bhadgaon,India.</p>
+                <div class="social-icons">
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Twitter"></a>
+                    <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733635.png" alt="Instagram"></a>
+                </div>
+            </div>
+            <!-- Google Map -->
+            <div class="footer-section">
+                <h3>Our Location</h3>
+                <div class="map-container"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59705.92375701393!2d75.19800449030689!3d20.7256404266985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd94405a77776a1%3A0x17b5823506c5acf4!2sAmadade%2C%20Maharashtra%20424105!5e0!3m2!1sen!2sin!4v1738258577287!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 E-Gram Panchayat,Amadade 🏛 All rights reserved  📚 Design By Harsh 🔗</i></p>
+        </div>
+</footer> 
+<script>
+    function generateCertificate() {
+        document.getElementById("certBabyName").innerText = document.getElementById("BabyName").value;
+        document.getElementById("certFatherName").innerText = document.getElementById("FatherName").value;
+        document.getElementById("certFatherAddharNo").innerText = document.getElementById("FatherAddharNo").value;
+        document.getElementById("certMotherName").innerText = document.getElementById("MotherName").value;
+        document.getElementById("certTime").innerText = document.getElementById("Time").value;
+        document.getElementById("certSex").innerText = document.getElementById("Sex").value;
+        document.getElementById("certPlace").innerText = document.getElementById("Place").value;
+        document.getElementById("certTal").innerText = document.getElementById("BabysTal").value;
+        document.getElementById("certDist").innerText = document.getElementById("BabysDist").value;
+        document.getElementById("certDate").innerText = document.getElementById("Date").value;
+        document.getElementById("certRegisterNo").innerText = document.getElementById("RegisterNo").value;
+        document.getElementById("certAddress").innerText = document.getElementById("Address").value;
+
+        // Show the certificate
+        document.getElementById("certificate").classList.remove("hidden");
+    }
+
+    function printCertificate() {
+        let certificateContent = document.getElementById("certificate").innerHTML;
+        let originalContent = document.body.innerHTML;
+
+        document.body.innerHTML = certificateContent;
+        window.print();
+        document.body.innerHTML = originalContent;
+    }
+</script>
+
+<style>
+    .hidden {
+        display: none;
+    }
+
+    .certificate {
+        border: 2px solid #000;
+        padding: 20px;
+        width: 80%;
+        margin: 20px auto;
+        background-color: #f9f9f9;
+    }
+
+    .certificate-header img {
+        width: 100px;
+    }
+
+    .signature-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .stamp {
+        width: 100px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+    /* footer section */
+.footer {
+    background: #222;
+    color: #fff;
+    padding: 40px 10%;
+    position: relative;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.footer-section p, 
+        .footer-section a {
+            font-size: 14px;
+            color: #ddd;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+            transition: 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ff9800;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .social-icons a {
+            background: #444;
+            padding: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            transition: 0.3s ease;
+        }
+        .social-icons a:hover {
+            background: #ff9800;
+        }
+
+        .social-icons img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Google Map */
+        .map-container {
+            width: 100%;
+            max-width: 350px;
+            height: 200px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Copyright Section */
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+        }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        text-align: center;
+    }
+}
+
+
+</style>
+
+</body>
+</html>
